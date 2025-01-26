@@ -1,0 +1,29 @@
+type Query {
+    findAllBooks: [Book]
+}
+
+type Mutation {
+    createBook(title: String, author: String, pages: Int): Book
+    addBook(book: BookInput!) : Book
+    batchCreate(books: [BookInput!]!) : [Book]
+}
+
+type Book {
+    id: ID!
+    title: String
+    pages: Int
+    author: String
+    reviews: [Review]
+}
+
+type Review {
+    id: ID!
+    title: String
+    comment: String
+}
+
+input BookInput {
+    title: String
+    pages: Int
+    author: String
+}

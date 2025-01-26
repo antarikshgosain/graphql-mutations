@@ -12,7 +12,6 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor
 public class Review {
 
     @Id
@@ -25,4 +24,6 @@ public class Review {
         this.title = title;
         this.comment = comment;
     }
+
+    public Review() {}
 }

@@ -1,0 +1,40 @@
+query findAllBooks {
+    findAllBooks {
+        id
+        title
+        author
+        reviews {
+            id
+            title
+            comment
+        }
+    }
+}
+
+mutation createBook {
+    createBook(title: "say Yes!", author: "Antariksh", pages: 50) {
+        id
+        title
+        author
+        pages
+    }
+}
+
+mutation AddBook {
+    addBook(book: {title: "Say NO!", pages: 55, author: "Anta"}) {
+        id
+        title
+    }
+}
+
+mutation batchCreate {
+    batchCreate(
+        books: [
+            {title: "Say Ok!", pages: 15, author: "Anta"},
+            {title: "Say Maybe!", pages: 45, author: "Anta"},
+            {title: "Say Ummm!", pages: 22, author: "Anta"}]
+    ) {
+        id
+        title
+    }
+}

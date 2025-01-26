@@ -7,7 +7,6 @@ import java.util.List;
 
 @Data
 @Entity
-@NoArgsConstructor
 @ToString
 @Getter
 @Setter
@@ -23,6 +22,9 @@ public class Book {
     @JoinColumn(name = "book_id")
     private List<Review> reviews;
 
+    public Book() {
+
+    }
     public List<Review> getReviews() {
         return reviews;
     }
